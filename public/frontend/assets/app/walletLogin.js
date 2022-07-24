@@ -16,10 +16,10 @@ function setWeb3 (web3provider) {
 
 async function switchChain () {
   try {
-    alert('Please Connect to RinkeBy Testnet to continue')
+    alert('Please Connect to Polygon Testnet to continue')
     await window.ethereum.request({
 		  method: 'wallet_switchEthereumChain',
-		  params: [{ chainId: '0x4' }]
+		  params: [{ chainId: '0x13881' }]
     })
 	  } catch (switchError) {
     // This error code indicates that the chain has not been added to MetaMask.
@@ -29,14 +29,14 @@ async function switchChain () {
 			  method: 'wallet_addEthereumChain',
 			  params: [
             {
-				  chainId: '0x4',
-				  chainName: 'Rinkeby Test Network',
-				  rpcUrls: ['https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'] /* ... */
+				  chainId: '0x13881',
+				  chainName: 'Polygon Test Network',
+				  rpcUrls: ['https://rpc-mumbai.maticvigil.com/'] /* ... */
             }
 			  ]
         })
 		  } catch (addError) {
-        alert('Please connect to rinkeyby testnet to continue')
+        alert('Please connect to Polygon testnet to continue')
 		  }
     }
     // handle other "switch" errors
@@ -86,7 +86,7 @@ async function connectWallet () {
 
     console.log(`Network ID is ${networkId}`)
 
-    if (networkId !== 4) {
+    if (networkId !== 80001) {
       switchChain()
     }
 

@@ -64,3 +64,15 @@ export const myEvents = async (req, res) => {
     responseUtils.response.serverErrorResponse(res, err)
   }
 }
+
+export const myTickets = async (req, res) => {
+  try {
+    const user = await User.findById(req.session.userId).populate({ path: 'ticketsBrought', populate: { path: 'eventId' } }).exec()
+    res.render('dashboard/my-tickets', {
+      tickets: user.ticketsBrought
+    })
+  } catch (err) {
+    logger.error(err)
+    responseUtils.response.serverErrorResponse(res, err)
+  }
+}

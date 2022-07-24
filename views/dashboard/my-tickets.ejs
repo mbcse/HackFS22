@@ -9,7 +9,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
 
     <%- include('../includes/dashboard/headFiles')%>
 
@@ -36,36 +35,34 @@
 
                     <!-- Page Heading -->
                     <div class="py-md-2 mb-3 ">
-                        <h1 class="h3 mb-0 text-gray-800">My Events</h1>
+                        <h1 class="h3 mb-0 text-gray-800">My Tickets</h1>
                         <hr>
                     </div>
 
 
                     <div class="row">
-                        <% events.map((event)=>{%>
+                        <% tickets.map((ticket)=>{%>
 
                             <div class="col-lg-4">
                                 <div class="container">
                                     <div class="card px-4 pt-4 pb-4 mx-auto mt-5">
                                         <div class="row">
-                                            <h5 class="align-self-center ml-2"><%-event.eventName%></h5>
+                                            <h5 class="align-self-center ml-2"><%-ticket.eventId.eventName%></h5>
 
                                             <!-- <div class="ml-auto"><span class="text-success">Open</span></div> -->
                                         </div>
-                                        <img class="border border-success" style="height: 10rem;" src="<%-event.eventPassImage%>">
+                                        <img class="border border-success" style="height: 10rem;" src="<%-ticket.eventId.eventPassImage%>">
 
-                                        <p class="mt-3 mb-2 text-center font-weight-bold">From: <%-event.eventStartDate%> To: <%-event.eventEndDate%></p>
-                                        <p class="text-center">Organised by <%-event.eventOrganizer%></p>
+                                        <p class="mt-3 mb-2 text-center font-weight-bold">From: <%-ticket.eventId.eventStartDate%> To: <%-ticket.eventId.eventEndDate%></p>
+                                        <p class="text-center">Organised by <%-ticket.eventId.eventOrganizer%></p>
 
-                                        <p class="mb-0 btn btn-outline-info">Ticket Price: <%-event.eventTicketPrice%> USD</p>
-                                        <p class="mb-0 btn btn-outline-info">Burn Value: <%-event.eventTicketBurnValue%> USD</p>
+                                        <p class="mb-0 btn btn-outline-info">Ticket Price: <%-ticket.eventId.eventTicketPrice%> USD</p>
+                                        <p class="mb-0 btn btn-outline-info">Burn Value: <%-ticket.eventId.eventTicketBurnValue%> USD</p>
 
                                         <div class="d-flex p-2 justify-content-between" >
-                                        <span class="btn btn-outline-success">Minted:<%-event.minted%></span>
-                                        <span class="btn btn-outline-danger">Left:<%-event.stock-event.minted%></span>
-                                        <span class="btn btn-outline-primary">Total:<%-event.stock%></span>
+                                       
                                         </div>
-                                        <button class="btn btn-dark mb-2"><span>Mint Ticket</span></button>
+                                        <button class="btn btn-dark mb-2"><span>Ticket Id: <%-ticket._id%></span></button>
                                         <!-- <button class="btn info"><span>Delete</span></button>
                                         <button class="btn info"><span>Edit</span></button> -->
 

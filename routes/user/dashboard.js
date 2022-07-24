@@ -1,6 +1,6 @@
 import express from 'express'
 import { verifyLoggedIn } from '../../middleware/verifyLoggedIn.js'
-import { dashboard, myEvents } from '../../controllers/user/dashboard.js'
+import { dashboard, myEvents, myTickets } from '../../controllers/user/dashboard.js'
 
 const router = express.Router()
 
@@ -17,9 +17,7 @@ router.get('/profile', verifyLoggedIn, (req, res) => {
 
 router.get('/myevents', verifyLoggedIn, myEvents)
 
-router.get('/mytickets', verifyLoggedIn, (req, res) => {
-  res.render('dashboard/my-tickets')
-})
+router.get('/mytickets', verifyLoggedIn, myTickets)
 
 router.get('/mintlist', verifyLoggedIn, (req, res) => {
   res.render('dashboard/mintlist')

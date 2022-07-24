@@ -9,9 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
 
     <%- include('../includes/dashboard/headFiles')%>
+    <script src="/frontend/assets/app/walletLogin.js"></script>
 
 </head>
 <body id="page-top">
@@ -151,7 +151,7 @@
                                         <span class="btn btn-outline-danger">Left:<%-event.stock-event.minted%></span>
                                         <span class="btn btn-outline-primary">Total:<%-event.stock%></span>
                                         </div>
-                                        <button class="btn btn-dark mb-2"><span>Mint Ticket</span></button>
+                                        <button class="btn btn-dark mb-2 mint-event-button"  value="<%-event._id%>"><span>Mint Ticket</span></button>
                                         <!-- <button class="btn info"><span>Delete</span></button>
                                         <button class="btn info"><span>Edit</span></button> -->
 
@@ -184,6 +184,12 @@
             <!-- Page level custom scripts -->
             <script src="/dashboard/js/demo/chart-area-demo.js"></script>
             <script src="/dashboard/js/demo/chart-pie-demo.js"></script>
+
+            <script src="/dashboard/app/mintTicket.js"></script>
+
+            <script>$( document ).ready(async function() {
+                 connectWallet()
+            });</script>
             
     </body>
     
