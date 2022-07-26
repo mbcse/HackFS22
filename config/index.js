@@ -55,31 +55,31 @@ export default {
 
   DB_CONSTANTS: dbConstants,
 
-  KEY_SECURE_PASSWORD: process.env.KEY_SECURE_PASSWORD || 'planetx12345',
+  KEY_SECURE_PASSWORD: process.env.KEY_SECURE_PASSWORD || '',
 
   EMAIL: {
     HOST: 'smtp.gmail.com',
-    USER: 'eventonchain@gmail.com',
-    PASS: 'nibyqovyimdmvczb'
+    USER: '',
+    PASS: ''
   },
 
   USERNAME: 'mbcse',
 
   AWS: {
-    ACCESS_KEY_ID: 'AKIAXJSA6ABAY2BGTLE4',
-    ACCESS_KEY_SECRET: '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'
+    ACCESS_KEY_ID: '',
+    ACCESS_KEY_SECRET: ''
   },
 
   OTP: {
     TIMEOUT_WINDOW: 240 // secs
   },
 
-  SESSION_SECRET: 'eventonchain-secert7675283',
+  SESSION_SECRET: '',
 
   PINATA: {
     URL: 'https://eventonchain.infura-ipfs.io/ipfs/' || 'https://gateway.pinata.cloud/ipfs/',
-    API_KEY: '62339bbfefbce43751af',
-    API_SECRET: '292825ec11d2988b8524adb1b3c739ad60bbff5382ea1114c8fb14eb4f3e4c06'
+    API_KEY: '',
+    API_SECRET: ''
   },
 
   CONTRACTS: {
